@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="638-JJ-GKs">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Recognizer View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="RecognizerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9xG-bx-lyu"/>
+                        <viewControllerLayoutGuide type="bottom" id="QNc-L9-5wd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-commerce Application" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afi-DB-baj">
+                                <rect key="frame" x="20" y="273" width="300" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="qon-m3-p8J" appends="YES" id="zGu-Cx-aiT"/>
+                            <outletCollection property="gestureRecognizers" destination="sfm-ub-yAC" appends="YES" id="aPe-HM-wnH"/>
+                            <outletCollection property="gestureRecognizers" destination="09U-e5-rLF" appends="YES" id="Cll-Oz-QF3"/>
+                            <outletCollection property="gestureRecognizers" destination="dWn-ww-bzd" appends="YES" id="gDM-c1-XKW"/>
+                            <outletCollection property="gestureRecognizers" destination="8DA-WT-SNn" appends="YES" id="75w-Qq-XNg"/>
+                            <outletCollection property="gestureRecognizers" destination="ZAE-Sf-6l7" appends="YES" id="Arx-3C-gn2"/>
+                            <outletCollection property="gestureRecognizers" destination="abD-nm-ChQ" appends="YES" id="vNZ-gI-GmW"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="QQK-j6-XpE"/>
+                    <connections>
+                        <outlet property="statusLabel" destination="Afi-DB-baj" id="asK-Sk-4FZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="qon-m3-p8J">
+                    <connections>
+                        <action selector="tapDetected:" destination="vXZ-lx-hvc" id="OlC-0c-tZJ"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="sfm-ub-yAC">
+                    <connections>
+                        <action selector="pinchDetected:" destination="vXZ-lx-hvc" id="zDC-kJ-qdk"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <rotationGestureRecognizer id="09U-e5-rLF">
+                    <connections>
+                        <action selector="rotationDetected:" destination="vXZ-lx-hvc" id="3Eh-Do-S5a"/>
+                    </connections>
+                </rotationGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="dWn-ww-bzd">
+                    <connections>
+                        <action selector="swipeDetected:" destination="vXZ-lx-hvc" id="eqB-SD-9uZ"/>
+                        <segue destination="vqK-rc-sym" kind="modal" id="uia-LS-30f"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="3.0000000000000013" id="8DA-WT-SNn">
+                    <connections>
+                        <action selector="longPressDetected:" destination="vXZ-lx-hvc" id="xWQ-Oi-7Jz"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <tapGestureRecognizer id="ZAE-Sf-6l7"/>
+                <swipeGestureRecognizer direction="left" id="abD-nm-ChQ">
+                    <connections>
+                        <action selector="LeftSwipe:" destination="vXZ-lx-hvc" id="GJ0-9J-024"/>
+                        <segue destination="Bry-5K-UHY" kind="modal" id="CIb-Oj-h39"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="891.5" y="354.5"/>
+        </scene>
+        <!--Coupons Table View Controller-->
+        <scene sceneID="PuT-HX-k4d">
+            <objects>
+                <tableViewController id="Bry-5K-UHY" customClass="CouponsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="coupons" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="mKw-H8-TXs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lIQ-d1-ucR">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="139"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Close"/>
+                            <connections>
+                                <action selector="Close:" destination="Bry-5K-UHY" eventType="touchUpInside" id="9Yl-vC-ODx"/>
+                            </connections>
+                        </button>
+                        <connections>
+                            <outlet property="dataSource" destination="Bry-5K-UHY" id="q7V-hu-2fa"/>
+                            <outlet property="delegate" destination="Bry-5K-UHY" id="XoL-hR-Tan"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LSC-cd-opQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1370.5" y="285.5"/>
+        </scene>
+        <!--Recognizer Table View Controller-->
+        <scene sceneID="zNn-72-mSW">
+            <objects>
+                <tableViewController id="vqK-rc-sym" customClass="RecognizerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="saleitems" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="51" sectionHeaderHeight="33" sectionFooterHeight="28" id="tT8-vX-TcO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PAz-AZ-7cn">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="169"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Close"/>
+                            <connections>
+                                <action selector="close:" destination="vqK-rc-sym" eventType="touchUpInside" id="Imh-9b-O6h"/>
+                            </connections>
+                        </button>
+                        <connections>
+                            <outlet property="dataSource" destination="vqK-rc-sym" id="U5E-kp-9ne"/>
+                            <outlet property="delegate" destination="vqK-rc-sym" id="JsP-BK-fiw"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAP-2N-5o9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1147.5" y="1119.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oSf-3Z-rhz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="638-JJ-GKs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bqv-JI-f4Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="SBV-Gb-2Dy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4Q-9e-2ai" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="304.5" y="354.5"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>
